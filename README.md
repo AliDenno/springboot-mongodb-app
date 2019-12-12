@@ -1,0 +1,3 @@
+# lego-store
+
+Springboot & Mongodb
