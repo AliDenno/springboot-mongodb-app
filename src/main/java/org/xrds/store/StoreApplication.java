@@ -21,7 +21,7 @@ public class StoreApplication {
     public Mongobee mongobee() {
         Mongobee runner = new Mongobee("mongodb://localhost:27017/legostore");
         runner.setMongoTemplate(mongoTemplate);
-        runner.setChangeLogsScanPackage("rc.legostore.persistence");
+        runner.setChangeLogsScanPackage("org.xrds.store.persistence");
 
         return runner;
     }
