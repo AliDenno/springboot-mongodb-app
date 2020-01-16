@@ -30,3 +30,9 @@ Springboot & Mongodb
 | Low level; you need to know how mongo queries work | Friendly syntax for filtering data | 
 |  | Built on top of JPA, consistent syntax, same methods are repositories over SQL | 
 | | Do not work on all use cases; Sometimes you need to fall back to the MongoTemplate | 
+
+* Spring Data can provide proxy implementation of queries based on method names:
+    * findBy**Lastname**
+    * findBy**Age**LessThan
+    * findBy**Active**True
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
