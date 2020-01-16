@@ -23,3 +23,10 @@ Springboot & Mongodb
 | If the object has an Id value | If the object has Id value | 
 | If Id value not already present in the collection, will use it to insert | If Id value not already present, will use it | 
 | Else, MongoDB will throw a Duplicate Key exception | If Id value present, will update the document | 
+
+| MongoTemplate | MongoRepostiroy  | 
+| :---:   | :-: | 
+| More flexible and powerful (more complex queries, aggregations) | Easier to use because they are a higher abstraction (90% cases) | 
+| Low level; you need to know how mongo queries work | Friendly syntax for filtering data | 
+|  | Built on top of JPA, consistent syntax, same methods are repositories over SQL | 
+| | Do not work on all use cases; Sometimes you need to fall back to the MongoTemplate | 
