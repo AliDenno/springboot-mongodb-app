@@ -35,4 +35,5 @@ Springboot & Mongodb
     * findBy**Lastname**
     * findBy**Age**LessThan
     * findBy**Active**True
+    
 https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
