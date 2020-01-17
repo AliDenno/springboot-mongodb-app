@@ -1,0 +1,12 @@
+- Source is on the right side, and the left side is the transformation
+- Project name to legoSetName
+- Project the average of reviews rating to avgRating
+- Take the script and run it against your db
+    - Use Robo 3T and fire it against your legosets
+
+db.legosets.aggregate([{
+        $project : {
+                legoSetName: "$name",
+                avgRating : {$avg : "$reviews.rating"}
+            }
+        }])
