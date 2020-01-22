@@ -1,0 +1,323 @@
+{
+	"info": {
+		"_postman_id": "7c620ed7-7022-49ea-ba15-710497bb5657",
+		"name": "Evaluation Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Insert a record",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Ali Denno\",\n\t\"difficulty\": \"MEDIUM\",\n\t\"theme\": \"Test\",\n\t\"reviews\":[\n\t\t\t{\n\t\t\t\"userName\": \"AliDenno\",\n\t\t\t\"rating\": 9\n\t\t\t}\n\t\t],\n\t\"deliveryInfo\" :{\n\t\t\"deliveryDate\" : \"2019-03-23T19:25:43.5112\",\n\t\t\"deliveryFee\": \"50\",\n\t\t\"inStock\": true\n\t},\n\t\"nbParts\":454\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/legostore/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"legostore",
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all records",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Ali Denno\",\n\t\"difficulty\": \"MEDIUM\",\n\t\"theme\": \"Test\",\n\t\"reviews\":[\n\t\t\t{\n\t\t\t\"userName\": \"AliDenno\",\n\t\t\t\"rating\": 9\n\t\t\t}\n\t\t],\n\t\t\"deliveryInfo\" :{\n\t\t\t\"deliveryDate\" : \"2019-03-23T19:25:43.5112\",\n\t\t\t\"deliveryFee\": \"50\",\n\t\t\t\"inStock\": true\n\t\t},\n\t\t\"nbParts\":454\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/legostore/api/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"legostore",
+						"api",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update record",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"5dd19488ef530d4a68df472a\",\n\t\"name\": \"Ali Denno doppelganger\",\n\t\"difficulty\": \"MEDIUM\",\n\t\"theme\": \"Test\",\n\t\"reviews\":[\n\t\t\t{\n\t\t\t\"userName\": \"AliDenno\",\n\t\t\t\"rating\": 9\n\t\t\t}\n\t\t],\n\t\t\"deliveryInfo\" :{\n\t\t\t\"deliveryDate\" : \"2019-03-23T19:25:43.5112\",\n\t\t\t\"deliveryFee\": \"50\",\n\t\t\t\"inStock\": true\n\t\t},\n\t\t\"nbParts\":454\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/legostore/api/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"legostore",
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete record",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/legostore/api/5dd19488ef530d4a68df472a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"legostore",
+						"api",
+						"5dd19488ef530d4a68df472a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get record by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/legostore/api/5e20da64d7de863133a8827b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"legostore",
+						"api",
+						"5e20da64d7de863133a8827b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get records by Theme",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/legostore/api/byTheme/Mindstorms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"legostore",
+						"api",
+						"byTheme",
+						"Mindstorms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get records that are hard and starts with M",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/legostore/api/hardThatStartWithM",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"legostore",
+						"api",
+						"hardThatStartWithM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get records by a sub-doc val deliveryFee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/legostore/api/byDeliveryFeeLessThan/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"legostore",
+						"api",
+						"byDeliveryFeeLessThan",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get records by a sub-doc val rating",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/legostore/api/greatReviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"legostore",
+						"api",
+						"greatReviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get bestBuys",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/legostore/api/bestBuys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"legostore",
+						"api",
+						"bestBuys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get avgRatings-reports",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/legostore/api/reports/avgRatingsReport",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"legostore",
+						"api",
+						"reports",
+						"avgRatingsReport"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a fullTextSearch of",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/legostore/api/fullTextSearch/dan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"legostore",
+						"api",
+						"fullTextSearch",
+						"dan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get records by PaymentOption",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/legostore/api/byPaymentOption/5e28baa302ba106f01838e59",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"legostore",
+						"api",
+						"byPaymentOption",
+						"5e28baa302ba106f01838e59"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
