@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Collection;
 
+/* Comment the @Service if you don't want this seeder to launch every time */
 @Service
 public class DbSeeder implements CommandLineRunner {
     private LegoSetRepository legoSetRepository;
