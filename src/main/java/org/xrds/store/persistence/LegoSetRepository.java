@@ -17,4 +17,13 @@ public interface LegoSetRepository extends MongoRepository<LegoSet, String>, Que
     Collection<LegoSet> findAllByThemeContains(String theme, Sort sort);
     Collection<LegoSet> findAllByDifficultyAndNameStartsWith(LegoSetDifficulty difficulty, String name);
     Collection<LegoSet> findAllBy(TextCriteria textCriteria);
+
+    @Query("{'delivery.deliveryFee' : {$lt : ?0}}")
+    Collection<LegoSet> findAllByDeliveryPriceLessThan(int price);
+
+    @Query("{'reviews.rating' : {$eq : 10}}")
+    Collection<LegoSet> findAllByGreatReviews();
+
+    @Query("{'paymentOptions.id' : ?0}")
+    Collection<LegoSet> findByPaymentOptionId(String id);
 }
