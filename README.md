@@ -1,6 +1,4 @@
-# lego-store
-
-Springboot & Mongodb
+# SpringBoot & MongoDB
 
 * DbSeeder is used to prepopulate the database
 * QueryDSL is used to write queries that are type safe (no more magic or strange strings)
