@@ -60,4 +60,34 @@ public class LegoStoreController {
         return this.legoSetRepository.findAllByDifficultyAndNameStartsWith(LegoSetDifficulty.HARD, "M");
     }
 
+    @GetMapping("byDeliveryFeeLessThan/{price}")
+    public Collection<LegoSet> byDeliveryFeeLessThan(@PathVariable int price){
+        return this.legoSetRepository.findAllByDeliveryPriceLessThan(price);
+    }
+
+    @GetMapping("greatReviews")
+    public Collection<LegoSet> byGreatReviews(){
+        return this.legoSetRepository.findAllByGreatReviews();
+    }
+
+    /*
+     ** In Production move this implementation to another component **
+     * Are in stock
+     * Have delivery fee less than 50
+     * Have at least one review with a 10 rating
+     */
+    @GetMapping("bestBuys")
+    public Collection<LegoSet> bestBuys(){
+        QLegoSet query = new QLegoSet("query");
+        BooleanExpression inStockFilter =  query.deliveryInfo.inStock.isTrue();
+        Predicate smallDeliveryFeeFilter =  query.deliveryInfo.deliveryFee.lt(50);
+        Predicate hasGreatReviews =  query.reviews.any().rating.eq(10);
+
+        Predicate bestBuysFilter = inStockFilter
+                .and(smallDeliveryFeeFilter)
+                .and(hasGreatReviews);
+
+        // pass the query to findAll()
+        return (Collection<LegoSet>) this.legoSetRepository.findAll(bestBuysFilter);
+    }
 }
