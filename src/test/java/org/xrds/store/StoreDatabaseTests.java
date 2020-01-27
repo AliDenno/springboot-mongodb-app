@@ -5,14 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
-import org.springframework.boot.test.autoconfigure.web.client.AutoConfigureWebClient;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
-//import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.xrds.store.model.*;
 import org.xrds.store.persistence.LegoSetRepository;
-
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
@@ -62,7 +58,5 @@ public class StoreDatabaseTests {
 
         assertEquals(1,results.size());
         assertEquals("Millennium Falcon",results.get(0).getName());
-//
     }
-
 }
