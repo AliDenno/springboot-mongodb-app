@@ -90,4 +90,15 @@ public class LegoStoreController {
         // pass the query to findAll()
         return (Collection<LegoSet>) this.legoSetRepository.findAll(bestBuysFilter);
     }
+
+    @GetMapping("fullTextSearch/{text}")
+    public Collection<LegoSet> fullTextSearch(@PathVariable String text){
+        TextCriteria textCriteria = TextCriteria.forDefaultLanguage().matching(text);
+        return this.legoSetRepository.findAllBy(textCriteria);
+    }
+
+    @GetMapping("/byPaymentOption/{id}")
+    public Collection<LegoSet> byPaymentOption(@PathVariable String id){
+        return this.legoSetRepository.findByPaymentOptionId(id);
+    }
 }
